@@ -2,7 +2,7 @@ from asyncore import read
 import os
 import csv
 from tkinter import X
-#Read CSV file
+#Read open and read CSV file
 election_csv = os.path.join("Resources","election_data.csv")
 
 with open(election_csv) as csv_file:
@@ -14,7 +14,7 @@ with open(election_csv) as csv_file:
     votes = []
     unique_candidates = []
     votecount = 0
-    # Iterate through rows
+    # Iterate through rows and store data in dictionaries
     for row in csv_reader:
         votecount +=1
         candidates.append(row[2])
@@ -24,11 +24,12 @@ with open(election_csv) as csv_file:
         votes.append(votes_per_candidate)
         per = (votes_per_candidate/votecount)*100
         percentage.append(per)
+    # Results calculations
     max_votes = max(votes)
     index = votes.index(max_votes)
     winner = unique_candidates[index]
     
-                        
+#Print results                        
 print("Election Results")
 print("----------------------")
 print("Total Votes: ",votecount)

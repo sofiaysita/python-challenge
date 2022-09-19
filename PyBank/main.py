@@ -15,7 +15,7 @@ with open(budget_csv) as csv_file:
     curr_month = 0
     prev_month = 0
     change_profit_loss = 0
-    # Iterate through rows
+    # Iterate through rows and store data in dictionaries
     for row in csv_reader:
         rowcount +=1
         total += int(row[1])
