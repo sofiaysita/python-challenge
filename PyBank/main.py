@@ -7,7 +7,7 @@ budget_csv = os.path.join("Resources","budget_data.csv")
 with open(budget_csv) as csv_file:
     csv_reader = csv.reader(csv_file,delimiter=",")
     header_row = next(csv_reader,None)
-    #Set variables and dictionaries to 0
+    #Set variables and lists to 0
     months = []
     profit_loss_changes = []
     rowcount = 0
@@ -15,7 +15,7 @@ with open(budget_csv) as csv_file:
     curr_month = 0
     prev_month = 0
     change_profit_loss = 0
-    # Iterate through rows and store data in dictionaries
+    # Iterate through rows and store data in lists
     for row in csv_reader:
         rowcount +=1
         total += int(row[1])

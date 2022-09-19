@@ -8,13 +8,13 @@ election_csv = os.path.join("Resources","election_data.csv")
 with open(election_csv) as csv_file:
     csv_reader = csv.reader(csv_file,delimiter=",")
     header_row = next(csv_reader,None)
-    #Set variables and dictionaries to 0
+    #Set variables and lists to 0
     candidates = []
     percentage = []
     votes = []
     unique_candidates = []
     votecount = 0
-    # Iterate through rows and store data in dictionaries
+    # Iterate through rows and store data in lists
     for row in csv_reader:
         votecount +=1
         candidates.append(row[2])
